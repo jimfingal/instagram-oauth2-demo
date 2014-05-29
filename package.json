@@ -1,0 +1,36 @@
+{
+  "name": "instagram-oauth-demo",
+  "version": "0.0.1",
+  "description": "Simple demo of authenticating with Oauth in node",
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^1.1.1"
+  },
+  "dependencies": {
+    "bower": "^1.3.3",
+    "express": "~3.3.4",
+    "instagram-node-lib": "^0.1.1",
+    "jade": "~0.34.0",
+    "oauth": "^0.9.12",
+    "request": "^2.36.0",
+    "requirejs": "2.1.11",
+    "socket.io": "latest",
+    "underscore": "latest"
+  },
+  "engines": {
+    "node": "0.10.26",
+    "npm": "1.4.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node_modules/.bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimmytheleaf/node-skeleton.git"
+  },
+  "author": "jimmytheleaf",
+  "bugs": {
+    "url": "https://github.com/jimmytheleaf/node-skeleton/issues"
+  }
+}
