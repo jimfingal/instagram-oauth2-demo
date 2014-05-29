@@ -10,6 +10,10 @@ For this to work, you must have a registered Instagram account, and the followin
     export INSTAGRAM_CLIENT_KEY=XXXXX
     export INSTAGRAM_CLIENT_SECRET=XXXX
 
+And you must generate SSL keys via:
+
+    ./keygen.sh
+
 To run:
 
     node web.js

@@ -1,15 +1,20 @@
 var express = require('express'),
-  http = require('http'),
+  https = require('https'),
   path = require('path'),
   request = require('request'),
-  io = require('socket.io');
+  io = require('socket.io'),
+  fs = require('fs');
 
+var options = {
+  key: fs.readFileSync('./app/keys/key.pem'),
+  cert: fs.readFileSync('./app/keys/cert.pem')
+};
 
 
 var CLIENT_ID = process.env.INSTAGRAM_CLIENT_KEY;
 var CLIENT_SECRET = process.env.INSTAGRAM_CLIENT_SECRET;
 // This must be redirect URL set with Instagram
-var REDIRECT_URI = 'http://localhost:3000/oauthredirect';
+var REDIRECT_URI = 'https://localhost:3000/oauthredirect';
 
 var app = express();
 
@@ -36,7 +41,7 @@ app.get('/clientside', function(req, res) {
 });
 
 
-var server = http.createServer(app);
+var server = https.createServer(options, app);
 var serverio = io.listen(server).set('log level', 2);
 
 
