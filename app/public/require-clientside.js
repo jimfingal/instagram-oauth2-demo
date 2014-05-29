@@ -18,4 +18,26 @@ require.config({
         }
     },
 });
-require(["main"]);
+
+
+require(['jquery', 'jquery-ui'],
+  function($) {
+
+    var loc = window.location;
+    var url = location.protocol + '//' + location.hostname + ':' + location.port;
+
+    $.ajax({url: url + "/clientid"}).done(function(data) {
+
+        var url = "https://api.instagram.com/oauth/authorize/?client_id=" + 
+                data['client_id'] +
+                "&redirect_uri=" + 
+                data['redirect_uri'] +
+                "&response_type=token";
+
+        window.location = url;
+
+    });
+
+});
+
+
