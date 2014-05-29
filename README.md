@@ -15,7 +15,7 @@ To run:
     node web.js
 
 
-## OAuth authentication flow
+## Server-side OAuth authentication flow
 
 A simplified overview of what happens here: http://instagram.com/developer/authentication/
 
