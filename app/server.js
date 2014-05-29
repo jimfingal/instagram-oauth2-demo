@@ -25,10 +25,8 @@ var serverio = io.listen(server).set('log level', 2);
 
 var CLIENT_ID = process.env.INSTAGRAM_CLIENT_KEY;
 var CLIENT_SECRET = process.env.INSTAGRAM_CLIENT_SECRET;
-
 // This must be redirect URL set with Instagram
 var REDIRECT_URL = 'http://localhost:3000/oauthredirect';
-
 
 app.get('/authenticate', function(req, res) {
   var url = "https://api.instagram.com/oauth/authorize/?client_id=" + 
@@ -68,7 +66,6 @@ app.get('/oauthredirect', function(req, res) {
 serverio.sockets.on('connection', function(socket) {  
   console.log("Connected to socket: " + socket);
 });
-
 
 
 

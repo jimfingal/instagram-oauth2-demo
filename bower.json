@@ -8,7 +8,6 @@
     "**/*.txt"
   ],
   "dependencies": {
-    "underscore": "latest",
     "requirejs": "latest",
     "jquery": "latest",
     "jquery-ui": "latest",
