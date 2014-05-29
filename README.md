@@ -21,7 +21,9 @@ To run:
 
 When you access via /clientside, the major logic happens in the client.
 
-This version is very simple: you are redirected to Instagram's auth page; if authenticated it redirects you to http://your-redirect-uri#access_token=216293235.f59def8.3bc6f0f6ecb54be6b303fc4c3b6ded58
+This version is very simple: you are redirected to Instagram's auth page; if authenticated it redirects you to:
+
+    http://your-redirect-uri#access_token=216293235.f59def8.3bc6f0f6ecb54be6b303fc4c3b6ded58
 
 
 
