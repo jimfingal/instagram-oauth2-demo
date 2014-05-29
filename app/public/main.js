@@ -4,8 +4,6 @@ requirejs(['socket.io', 'jquery', 'jquery-ui', 'bootstrap'],
     var loc = window.location;
     var url = location.protocol + '//' + location.hostname + ':' + location.port;
 
-    console.log(url);
-
     var socket = io.connect(url);
 
     socket.on('disconnect', function () {
@@ -17,33 +15,16 @@ requirejs(['socket.io', 'jquery', 'jquery-ui', 'bootstrap'],
     });
 
     $("#login").click(function() {
-        console.log("Clicked");
         window.location = url + '/authenticate';
     });
 
-   var jsonSyntaxHighlight = function(json) {
-          json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-              var cls = 'number';
-              if (/^"/.test(match)) {
-                  if (/:$/.test(match)) {
-                      cls = 'key';
-                  } else {
-                      cls = 'string';
-                  }
-              } else if (/true|false/.test(match)) {
-                  cls = 'boolean';
-              } else if (/null/.test(match)) {
-                  cls = 'null';
-              }
-              return '<span class="' + cls + '">' + match + '</span>';
-          });
-      };
-
-
-    socket.on('response', function (json) {
-        var pretty = jsonSyntaxHighlight(json);
-        $("#response").html(pretty);
+    socket.on('response', function (json_text) {
+      var json = $.parseJSON(json_text);
+      $('#access_token').html("<h2>Access token</h2><p>" + json['access_token'] + "</p>");
+      $('#username').html("<h2>Username</h2><p>" + json['user']['username'] + "</p>");
+      $('#full_name').html("<h2>Full Name</h2><p>" + json['user']['full_name'] + "</p>");
+      $('#user_id').html("<h2>User ID</h2><p>" + json['user']['id'] + "</p>");
+      $('#pic').html("<h2>Profile Picture</h2><p><img src='" + json['user']['profile_picture'] + "'></p>");
     });
 
 
