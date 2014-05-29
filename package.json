@@ -14,7 +14,7 @@
     "oauth": "^0.9.12",
     "request": "^2.36.0",
     "requirejs": "2.1.11",
-    "socket.io": "latest",
+    "socket.io": "0.9.17",
     "underscore": "latest"
   },
   "engines": {

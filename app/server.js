@@ -22,11 +22,9 @@ app.get('/', function(req, res) {
   res.render('index', { title: 'Oauth Test' });
 });
 
-var server = http.createServer(app);
-var serverio = io.listen(server);
-server.listen(app.get('port'));
-console.log('listening on port ' + app.get('port'));
 
+var server = http.createServer(app);
+var serverio = io.listen(server).set('log level', 2);
 
 var Instagram = require('instagram-node-lib');
 var _ = require('underscore');
@@ -81,6 +79,9 @@ serverio.sockets.on('connection', function(socket) {
 
 
 
+
+server.listen(app.get('port'));
+console.log('listening on port ' + app.get('port'));
 
 
 
