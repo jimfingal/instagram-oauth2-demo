@@ -1,9 +1,7 @@
 instagram-oauth-demo
 =============
 
-A very simple / dumb demo showing at a low level what happens when you authenticate with Instagram using OAuth.
-
-All the intelligence happens on server.js.
+A very simple / dumb demo showing at a low level what happens when you authenticate with Instagram using OAuth. There is no error handling here.
 
 For this to work, you must have a registered Instagram account, and the following environment variables:
 
@@ -19,7 +17,20 @@ To run:
     node web.js
 
 
+## Client-side OAuth authentication flow
+
+When you access via /clientside, the major logic happens in the client.
+
+This version is very simple: you are redirected to Instagram's auth page; if authenticated it redirects you to:
+
+    http://your-redirect-uri#access_token=216293235.f59def8.3bc6f0f6ecb54be6b303fc4c3b6ded58
+
+
+
 ## Server-side OAuth authentication flow
+
+When you access via /, all the intelligence happens on server.js.
+
 
 A simplified overview of what happens here: http://instagram.com/developer/authentication/
 
