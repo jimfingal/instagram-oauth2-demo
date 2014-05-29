@@ -58,9 +58,7 @@ app.get('/authenticate', function(req, res) {
 
 app.get('/oauthredirect', function(req, res) {
 
-  console.log(req.query);
   var code = req.query.code;
-  var token = req.query.access_token;
 
   if (code) {
 
