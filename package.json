@@ -25,10 +25,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jimmytheleaf/node-skeleton.git"
+    "url": "https://github.com/jimmytheleaf/instagram-oauth-demo.git"
   },
   "author": "jimmytheleaf",
   "bugs": {
-    "url": "https://github.com/jimmytheleaf/node-skeleton/issues"
+    "url": "https://github.com/jimmytheleaf/instagram-oauth-demo/issues"
   }
 }
