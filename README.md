@@ -3,7 +3,7 @@ instagram-oauth-demo
 
 A very simple / dumb demo showing at a low level what happens when you authenticate with Instagram using OAuth. There is no error handling here.
 
-For this to work, you must have a registered Instagram account, and the following environment variables:
+For this to work, you must have a registered Instagram application, and the following environment variables:
 
     export INSTAGRAM_CLIENT_KEY=XXXXX
     export INSTAGRAM_CLIENT_SECRET=XXXX
